@@ -12,10 +12,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Cadastro.API/Cadastro.API.csproj", "Cadastro.API/"]
-RUN dotnet restore "./Cadastro.API/Cadastro.API.csproj"
+COPY ["src/Cadastro.API/Cadastro.API.csproj", "src/Cadastro.API/"]
+RUN dotnet restore "./src/Cadastro.API/Cadastro.API.csproj"
 COPY . .
-WORKDIR "/src/Cadastro.API"
+WORKDIR "/src/src/Cadastro.API"
 RUN dotnet build "./Cadastro.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
