@@ -4,7 +4,7 @@ using Cadastro.Domain.ValueObjects;
 
 namespace Cadastro.Application.UseCases.GravarCadastro;
 
-public class GravarCadastroUseCase : IUseCase<GravaCadastrorRequest>
+public class GravarCadastroUseCase : IUseCase<GravarCadastroRequest>
 {
     private readonly ICadastroRepository _cadastroRepository;
 
@@ -12,7 +12,7 @@ public class GravarCadastroUseCase : IUseCase<GravaCadastrorRequest>
     {
         _cadastroRepository = cadastroRepository;
     }
-    public async Task ExecuteAsync(GravaCadastrorRequest request)
+    public async Task ExecuteAsync(GravarCadastroRequest request)
     {
         var cadastroDomain = new Domain.Entities.Cadastro(
             null,

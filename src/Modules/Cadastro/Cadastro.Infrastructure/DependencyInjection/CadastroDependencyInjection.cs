@@ -2,6 +2,7 @@
 using Cadastro.Application.UseCases.GravarCadastro;
 using Cadastro.Application.UseCases.ObterCadastro;
 using Cadastro.Domain.Abstractions;
+using Cadastro.Infrastructure.Repositories.MongoDB;
 using Cadastro.Infrastructure.Repositories.MongoDB.Contexts;
 using Cadastro.Infrastructure.Repositories.Persistence;
 using Mapster;
@@ -17,7 +18,7 @@ public static class CadastroDependencyInjection
     {
         RegisterContexts(services);
         RegisterServices(services, configuration);
-        TypeAdapterConfig.GlobalSettings.Scan(AppDomain.CurrentDomain.Load("ControlePedidos.Cadastro.Application"));
+        TypeAdapterConfig.GlobalSettings.Scan(AppDomain.CurrentDomain.Load("Cadastro.Application"));
 
     }
 

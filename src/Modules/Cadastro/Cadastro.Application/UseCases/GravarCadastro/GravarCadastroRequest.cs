@@ -1,6 +1,6 @@
 ﻿namespace Cadastro.Application.UseCases.GravarCadastro;
 
-public class GravaCadastrorRequest
+public class GravarCadastroRequest
 {
     public string Email { get; set; }
     public string CPF { get; set; }

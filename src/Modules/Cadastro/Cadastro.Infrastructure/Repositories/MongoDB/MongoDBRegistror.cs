@@ -1,6 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Conventions;
 
-namespace Cadastro.Infrastructure.Repositories.Persistence;
+namespace Cadastro.Infrastructure.Repositories.MongoDB;
 
 public class MongoDBRegistror
 {

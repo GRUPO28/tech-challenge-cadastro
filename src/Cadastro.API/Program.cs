@@ -1,8 +1,7 @@
 using System.Text.Json.Serialization;
 using Cadastro.Infrastructure.DependencyInjection;
-using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.DependencyInjection;
+using HealthChecks.UI.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
