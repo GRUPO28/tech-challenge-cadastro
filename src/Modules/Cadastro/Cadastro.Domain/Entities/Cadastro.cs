@@ -6,7 +6,7 @@ namespace Cadastro.Domain.Entities;
 
 public class Cadastro : Entity, IAggregationRoot
 {
-    public Cadastro(string id, DateTime dataDeCriacao, Email email CPF cpf, string nome): base(id, dataDeCriacao)
+    public Cadastro(string id, DateTime dataDeCriacao, Email email, CPF cpf, string nome): base(id, dataDeCriacao)
     {
         Email = email;
         CPF = cpf;
