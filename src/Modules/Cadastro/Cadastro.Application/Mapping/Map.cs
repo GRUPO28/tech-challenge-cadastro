@@ -1,8 +1,10 @@
 ﻿using Cadastro.Application.UseCases.ObterCadastro;
 using Mapster;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cadastro.Application.Mapping;
 
+[ExcludeFromCodeCoverage]
 public class Map : IRegister
 {
     public void Register(TypeAdapterConfig config)

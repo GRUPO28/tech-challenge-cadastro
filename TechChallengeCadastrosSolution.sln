@@ -23,7 +23,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cadastro", "Cadastro", "{D8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0EF4A399-8FDE-40FE-95AB-84262C5089C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "src\Modules\Common\Common\Common.csproj", "{844E49D3-C598-49A9-8AD4-E2FFE674BBE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "src\Modules\Common\Common\Common.csproj", "{844E49D3-C598-49A9-8AD4-E2FFE674BBE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cadastro.Test.Unit", "Cadastro.Test.Unit\Cadastro.Test.Unit.csproj", "{521D65B8-26EF-44F0-941E-2337DF30B325}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{844E49D3-C598-49A9-8AD4-E2FFE674BBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{844E49D3-C598-49A9-8AD4-E2FFE674BBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{844E49D3-C598-49A9-8AD4-E2FFE674BBE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{521D65B8-26EF-44F0-941E-2337DF30B325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{521D65B8-26EF-44F0-941E-2337DF30B325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{521D65B8-26EF-44F0-941E-2337DF30B325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{521D65B8-26EF-44F0-941E-2337DF30B325}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{D84742CA-55E8-4B3B-9FD0-6C059C4553D1} = {E5403ABF-B952-41BB-B20B-CA3E0F2C76BB}
 		{0EF4A399-8FDE-40FE-95AB-84262C5089C5} = {7895636D-34CF-46E2-A84B-60AA6F201DAA}
 		{844E49D3-C598-49A9-8AD4-E2FFE674BBE0} = {0EF4A399-8FDE-40FE-95AB-84262C5089C5}
+		{521D65B8-26EF-44F0-941E-2337DF30B325} = {D84742CA-55E8-4B3B-9FD0-6C059C4553D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B11AC559-DB56-4D23-A08A-BE41162C2941}
