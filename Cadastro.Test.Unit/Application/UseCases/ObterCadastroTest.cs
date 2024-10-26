@@ -48,7 +48,7 @@ public class ObterCadastroTest
     }
 
     [Fact]
-    public async Task ExecuteAsync_Should_RetornarNulo_When_PedidoNaoEncontrado()
+    public async Task ExecuteAsync_Should_RetornarNulo_When_CadastroNaoEncontrado()
     {
         // Arrange
         string cpf = "test";

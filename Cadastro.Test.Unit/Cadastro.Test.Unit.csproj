@@ -11,8 +11,10 @@
 
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
+    <PackageReference Include="FluentAssertions" Version="6.12.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="SpecFlow.xUnit" Version="3.9.74" />
     <PackageReference Include="xunit" Version="2.5.3" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.3" />
   </ItemGroup>
@@ -25,6 +27,11 @@
     <ProjectReference Include="..\src\Modules\Cadastro\Cadastro.Application\Cadastro.Application.csproj" />
     <ProjectReference Include="..\src\Modules\Cadastro\Cadastro.Domain\Cadastro.Domain.csproj" />
     <ProjectReference Include="..\src\Modules\Common\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\" />
+    <Folder Include="Hooks\" />
   </ItemGroup>
 
 </Project>
