@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Cadastro.Test.Unit.Features
+namespace Cadastro.Test.Unit.Features.Domain.Entities
 {
     using TechTalk.SpecFlow;
     using System;
@@ -19,7 +19,7 @@ namespace Cadastro.Test.Unit.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class ObterDadosDeCadastroCasoCadastroExistaFeature : object, Xunit.IClassFixture<ObterDadosDeCadastroCasoCadastroExistaFeature.FixtureData>, System.IDisposable
+    public partial class AsRegrasDeCriacaoDasEntidadesDoDominioDevemSerRespeitadasFeature : object, Xunit.IClassFixture<AsRegrasDeCriacaoDasEntidadesDoDominioDevemSerRespeitadasFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -28,10 +28,10 @@ namespace Cadastro.Test.Unit.Features
         
         private Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
-#line 1 "ObterCadastro.feature"
+#line 1 "CadastroDomain.feature"
 #line hidden
         
-        public ObterDadosDeCadastroCasoCadastroExistaFeature(ObterDadosDeCadastroCasoCadastroExistaFeature.FixtureData fixtureData, Cadastro_Test_Unit_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AsRegrasDeCriacaoDasEntidadesDoDominioDevemSerRespeitadasFeature(AsRegrasDeCriacaoDasEntidadesDoDominioDevemSerRespeitadasFeature.FixtureData fixtureData, Cadastro_Test_Unit_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Cadastro.Test.Unit.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Obter dados de cadastro caso cadastro exista", "\tComo usuario\r\n\tQuero informar o CPF e obter os dados", ProgrammingLanguage.CSharp, featureTags);
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features/Domain/Entities", "As regras de criacao das entidades do dominio devem ser respeitadas", "    Caso os valores informados estejam incorretos, excecoes devem ser lancadas.", ProgrammingLanguage.CSharp, featureTags);
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -80,15 +80,15 @@ namespace Cadastro.Test.Unit.Features
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Cadastro encontrado")]
-        [Xunit.TraitAttribute("FeatureTitle", "Obter dados de cadastro caso cadastro exista")]
-        [Xunit.TraitAttribute("Description", "Cadastro encontrado")]
-        public void CadastroEncontrado()
+        [Xunit.SkippableFactAttribute(DisplayName="Cadstro com Email informado invalido")]
+        [Xunit.TraitAttribute("FeatureTitle", "As regras de criacao das entidades do dominio devem ser respeitadas")]
+        [Xunit.TraitAttribute("Description", "Cadstro com Email informado invalido")]
+        public void CadstroComEmailInformadoInvalido()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastro encontrado", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadstro com Email informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 4
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -98,28 +98,28 @@ namespace Cadastro.Test.Unit.Features
             else
             {
                 this.ScenarioStart();
+#line 5
+  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 6
-  testRunner.Given("CPF foi passado corretamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.When("alocado Email errado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
-  testRunner.When("usuario e encontrado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 8
-  testRunner.Then("os dados do cadastro sao retornados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("excecao gerada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Cadastro nao encontrado")]
-        [Xunit.TraitAttribute("FeatureTitle", "Obter dados de cadastro caso cadastro exista")]
-        [Xunit.TraitAttribute("Description", "Cadastro nao encontrado")]
-        public void CadastroNaoEncontrado()
+        [Xunit.SkippableFactAttribute(DisplayName="Cadstro com CPF informado invalido")]
+        [Xunit.TraitAttribute("FeatureTitle", "As regras de criacao das entidades do dominio devem ser respeitadas")]
+        [Xunit.TraitAttribute("Description", "Cadstro com CPF informado invalido")]
+        public void CadstroComCPFInformadoInvalido()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastro nao encontrado", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 10
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadstro com CPF informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 9
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -129,14 +129,14 @@ namespace Cadastro.Test.Unit.Features
             else
             {
                 this.ScenarioStart();
+#line 10
+  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
 #line 11
-  testRunner.Given("CPF foi passado corretamente ou incorretamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.When("alocado CPF errado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 12
-  testRunner.When("usuario nao e encontrado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 13
-  testRunner.Then("nada e retornado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.Then("excecao gerada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -149,12 +149,12 @@ namespace Cadastro.Test.Unit.Features
             
             public FixtureData()
             {
-                ObterDadosDeCadastroCasoCadastroExistaFeature.FeatureSetup();
+                AsRegrasDeCriacaoDasEntidadesDoDominioDevemSerRespeitadasFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                ObterDadosDeCadastroCasoCadastroExistaFeature.FeatureTearDown();
+                AsRegrasDeCriacaoDasEntidadesDoDominioDevemSerRespeitadasFeature.FeatureTearDown();
             }
         }
     }

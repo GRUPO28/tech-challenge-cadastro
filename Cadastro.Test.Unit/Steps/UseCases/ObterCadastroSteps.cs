@@ -6,7 +6,7 @@ using Moq;
 using TechTalk.SpecFlow;
 using System.Threading.Tasks;
 
-namespace Cadastro.Test.Unit.Steps
+namespace Cadastro.Test.Unit.Steps.UseCases
 {
     [Binding]
     public class ObterCadastroSteps

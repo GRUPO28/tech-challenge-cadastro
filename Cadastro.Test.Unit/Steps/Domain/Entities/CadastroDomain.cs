@@ -1,0 +1,79 @@
+﻿using Cadastro.Application.Abstractions;
+using Cadastro.Application.UseCases.ObterCadastro;
+using Cadastro.Domain.ValueObjects;
+using Common.Exceptions;
+using Moq;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using TechTalk.SpecFlow;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace Cadastro.Test.Unit.Steps.Domain.Entities;
+
+[Binding]
+public class CadastroDomain
+{
+    private static Cadastro.Domain.Entities.Cadastro CriarCadastro()
+    {
+        string id = Guid.NewGuid().ToString();
+        string nome = "Felipe";
+        DateTime dataDeCriacao = DateTime.Now;
+        string email = "felipe@gmail.com";
+        string cpf = "179.938.500-02";
+
+        return new Cadastro.Domain.Entities.Cadastro(
+            id,
+            dataDeCriacao,
+            new Cadastro.Domain.ValueObjects.Email(email),
+            new Cadastro.Domain.ValueObjects.CPF(cpf),
+        nome);
+    }
+
+    private Cadastro.Domain.Entities.Cadastro _entidade;
+    private Action act;
+
+
+    [Given(@"Tentativa de criar objeto da entidade")]
+    public void GivenTentativaDeCriarObjetoDaEntidade()
+    {
+        _entidade = CriarCadastro();
+    }
+
+    [When(@"alocado Email errado")]
+    public async Task WhenAlocadoEmailErrado()
+    {
+        act = () => new Cadastro.Domain.Entities.Cadastro(
+            null,
+            DateTime.UtcNow,
+            new Cadastro.Domain.ValueObjects.Email("felipe"),
+            _entidade.CPF,
+            _entidade.Nome
+            );
+    }
+
+    [When(@"alocado CPF errado")]
+    public async Task WhenAlocadoCPFErrado()
+    {
+        act = () => new Cadastro.Domain.Entities.Cadastro(
+            null,
+            DateTime.UtcNow,
+            _entidade.Email,
+            new Cadastro.Domain.ValueObjects.CPF("1254"),
+            _entidade.Nome
+            );
+    }
+
+    [Then(@"excecao gerada")]
+    public void ThenExcecaoGerada()
+    {
+        Assert.Throws<DomainNotificationException>(act);
+    }
+
+
+
+    
+
+}
