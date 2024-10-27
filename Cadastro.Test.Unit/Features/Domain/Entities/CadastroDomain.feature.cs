@@ -80,14 +80,14 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
             this.TestTearDown();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Cadstro com Email informado invalido")]
+        [Xunit.SkippableFactAttribute(DisplayName="Cadastro com Email informado invalido")]
         [Xunit.TraitAttribute("FeatureTitle", "As regras de criacao das entidades do dominio devem ser respeitadas")]
-        [Xunit.TraitAttribute("Description", "Cadstro com Email informado invalido")]
-        public void CadstroComEmailInformadoInvalido()
+        [Xunit.TraitAttribute("Description", "Cadastro com Email informado invalido")]
+        public void CadastroComEmailInformadoInvalido()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadstro com Email informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastro com Email informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -111,14 +111,14 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Cadstro com CPF informado invalido")]
+        [Xunit.SkippableFactAttribute(DisplayName="Cadastro com CPF informado invalido")]
         [Xunit.TraitAttribute("FeatureTitle", "As regras de criacao das entidades do dominio devem ser respeitadas")]
-        [Xunit.TraitAttribute("Description", "Cadstro com CPF informado invalido")]
-        public void CadstroComCPFInformadoInvalido()
+        [Xunit.TraitAttribute("Description", "Cadastro com CPF informado invalido")]
+        public void CadastroComCPFInformadoInvalido()
         {
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadstro com CPF informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastro com CPF informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 9
  this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -137,6 +137,68 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
 #line hidden
 #line 12
   testRunner.Then("excecao gerada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Cadastro com Nome informado invalido")]
+        [Xunit.TraitAttribute("FeatureTitle", "As regras de criacao das entidades do dominio devem ser respeitadas")]
+        [Xunit.TraitAttribute("Description", "Cadastro com Nome informado invalido")]
+        public void CadastroComNomeInformadoInvalido()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastro com Nome informado invalido", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 14
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 15
+  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 16
+  testRunner.When("alocado Nome errado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 17
+  testRunner.Then("excecao gerada", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Cadastro dados validos")]
+        [Xunit.TraitAttribute("FeatureTitle", "As regras de criacao das entidades do dominio devem ser respeitadas")]
+        [Xunit.TraitAttribute("Description", "Cadastro dados validos")]
+        public void CadastroDadosValidos()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cadastro dados validos", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 19
+ this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 20
+  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 21
+  testRunner.When("alocado dados corretamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 22
+  testRunner.Then("dado criado com sucesso", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

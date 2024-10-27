@@ -5,6 +5,7 @@ using Common.Exceptions;
 using Moq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Cadastro.Test.Unit.Steps.Domain.Entities;
 
 [Binding]
+[ExcludeFromCodeCoverage]
 public class CadastroDomain
 {
     private static Cadastro.Domain.Entities.Cadastro CriarCadastro()
@@ -28,7 +30,7 @@ public class CadastroDomain
             id,
             dataDeCriacao,
             new Cadastro.Domain.ValueObjects.Email(email),
-            new Cadastro.Domain.ValueObjects.CPF(cpf),
+            new Cadastro.Domain.ValueObjects.Cpf(cpf),
         nome);
     }
 
@@ -61,10 +63,36 @@ public class CadastroDomain
             null,
             DateTime.UtcNow,
             _entidade.Email,
-            new Cadastro.Domain.ValueObjects.CPF("1254"),
+            new Cadastro.Domain.ValueObjects.Cpf("1254"),
             _entidade.Nome
             );
     }
+
+    [When(@"alocado Nome errado")]
+    public async Task WhenAlocadoNomeErrado()
+    {
+        act = () => new Cadastro.Domain.Entities.Cadastro(
+            null,
+            DateTime.UtcNow,
+            _entidade.Email,
+            _entidade.CPF,
+            ""
+            );
+    }
+
+
+    [When(@"alocado dados corretamente")]
+    public async Task WhenAlocadoDadosCorretamente()
+    {
+        act = () => new Cadastro.Domain.Entities.Cadastro(
+            null,
+            DateTime.UtcNow,
+            _entidade.Email,
+            _entidade.CPF,
+            _entidade.Nome
+            );
+    }
+
 
     [Then(@"excecao gerada")]
     public void ThenExcecaoGerada()
@@ -72,8 +100,14 @@ public class CadastroDomain
         Assert.Throws<DomainNotificationException>(act);
     }
 
+    [Then(@"dado criado com sucesso")]
+    public void ThenDadoCriadoComSucesso()
+    {
+        Assert.NotNull(act);
+    }
 
 
-    
+
+
 
 }

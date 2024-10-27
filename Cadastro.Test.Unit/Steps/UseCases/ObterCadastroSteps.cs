@@ -5,10 +5,12 @@ using Cadastro.Domain.ValueObjects;
 using Moq;
 using TechTalk.SpecFlow;
 using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cadastro.Test.Unit.Steps.UseCases
 {
     [Binding]
+    [ExcludeFromCodeCoverage]
     public class ObterCadastroSteps
     {
         private readonly ObterCadastroUseCase _useCase;
@@ -34,7 +36,7 @@ namespace Cadastro.Test.Unit.Steps.UseCases
                 id,
                 DateTime.UtcNow,
                 new Email(email),
-                new CPF(cpf),
+                new Cpf(cpf),
                 nome);
         }
 
@@ -77,7 +79,7 @@ namespace Cadastro.Test.Unit.Steps.UseCases
         public void ThenNadaERetornado()
         {
             _cadastroRepositoryMock.Verify(x => x.ObterCadastroAsync(_CPF), Times.Once);
-            Assert.Null(_cadastroEncontrado); // Certifique-se de que o resultado é nulo
+            Assert.Null(_cadastroEncontrado);
         }
     }
 }
