@@ -15,10 +15,10 @@ public class GravarCadastroUseCase : IUseCase<GravarCadastroRequest>
     public async Task ExecuteAsync(GravarCadastroRequest request)
     {
         var cadastroDomain = new Domain.Entities.Cadastro(
-            null,
+            null!,
             DateTime.UtcNow,
             new Email(request.Email),
-            new CPF(request.CPF),
+            new Cpf(request.CPF),
             request.Nome
          );
 
