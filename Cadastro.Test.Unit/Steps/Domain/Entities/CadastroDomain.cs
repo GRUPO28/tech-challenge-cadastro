@@ -34,8 +34,8 @@ public class CadastroDomain
         nome);
     }
 
-    private Cadastro.Domain.Entities.Cadastro _entidade;
-    private Action act;
+    private Cadastro.Domain.Entities.Cadastro? _entidade;
+    private Action? act;
 
 
     [Given(@"Tentativa de criar objeto da entidade")]
@@ -48,10 +48,10 @@ public class CadastroDomain
     public void WhenAlocadoEmailErrado()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
-            null,
+            null!,
             DateTime.UtcNow,
             new Cadastro.Domain.ValueObjects.Email("felipe"),
-            _entidade.CPF,
+            _entidade!.CPF,
             _entidade.Nome
             );
     }
@@ -60,9 +60,9 @@ public class CadastroDomain
     public void WhenAlocadoCPFErrado()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
-            null,
+            null!,
             DateTime.UtcNow,
-            _entidade.Email,
+            _entidade!.Email,
             new Cadastro.Domain.ValueObjects.Cpf("1254"),
             _entidade.Nome
             );
@@ -72,9 +72,9 @@ public class CadastroDomain
     public void WhenAlocadoNomeErrado()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
-            null,
+            null!,
             DateTime.UtcNow,
-            _entidade.Email,
+            _entidade!.Email,
             _entidade.CPF,
             ""
             );
@@ -85,9 +85,9 @@ public class CadastroDomain
     public void WhenAlocadoDadosCorretamente()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
-            null,
+            null!,
             DateTime.UtcNow,
-            _entidade.Email,
+            _entidade!.Email,
             _entidade.CPF,
             _entidade.Nome
             );
@@ -97,7 +97,7 @@ public class CadastroDomain
     [Then(@"excecao gerada")]
     public void ThenExcecaoGerada()
     {
-        Assert.Throws<DomainNotificationException>(act);
+        Assert.Throws<DomainNotificationException>(act!);
     }
 
     [Then(@"dado criado com sucesso")]

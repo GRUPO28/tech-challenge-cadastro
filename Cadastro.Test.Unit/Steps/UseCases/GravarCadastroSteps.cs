@@ -22,7 +22,7 @@ public class GravarCadastroSteps
     private readonly GravarCadastroUseCase _useCase;
     private readonly Mock<ICadastroRepository> _cadastroRepositoryMock;
 
-    private GravarCadastroRequest _request;
+    private GravarCadastroRequest? _request;
 
     public GravarCadastroSteps()
     {
@@ -47,9 +47,7 @@ public class GravarCadastroSteps
     [When(@"dados passados estao de acordo")]
     public async Task WhenDadosPassadosEstaoDeAcordo()
     {
-        await _useCase.ExecuteAsync(_request);
-
-
+        await _useCase.ExecuteAsync(_request!);
     }
 
     [Then(@"cadastro realizado")]
@@ -78,7 +76,7 @@ public class GravarCadastroSteps
         try
         {
             _cadastroRepositoryMock.Setup(x => x.CadastrarAsync(It.IsAny<Cadastro.Domain.Entities.Cadastro>()));
-            await _useCase.ExecuteAsync(_request);
+            await _useCase.ExecuteAsync(_request!);
         }
         catch (DomainNotificationException ex)
         {
@@ -87,7 +85,7 @@ public class GravarCadastroSteps
     }
 
     [Then(@"uma excecao de validacao e lancada")]
-    public async Task ThenUmaExcecaoDeValidacaoELancada()
+    public void ThenUmaExcecaoDeValidacaoELancada()
     {
         _excecaoCapturada.Should().NotBeNull();
         _excecaoCapturada.Should().BeOfType<DomainNotificationException>();
