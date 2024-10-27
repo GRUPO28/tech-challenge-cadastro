@@ -45,7 +45,7 @@ public class CadastroDomain
     }
 
     [When(@"alocado Email errado")]
-    public async Task WhenAlocadoEmailErrado()
+    public void WhenAlocadoEmailErrado()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
             null,
@@ -57,7 +57,7 @@ public class CadastroDomain
     }
 
     [When(@"alocado CPF errado")]
-    public async Task WhenAlocadoCPFErrado()
+    public void WhenAlocadoCPFErrado()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
             null,
@@ -69,7 +69,7 @@ public class CadastroDomain
     }
 
     [When(@"alocado Nome errado")]
-    public async Task WhenAlocadoNomeErrado()
+    public void WhenAlocadoNomeErrado()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
             null,
@@ -82,7 +82,7 @@ public class CadastroDomain
 
 
     [When(@"alocado dados corretamente")]
-    public async Task WhenAlocadoDadosCorretamente()
+    public void WhenAlocadoDadosCorretamente()
     {
         act = () => new Cadastro.Domain.Entities.Cadastro(
             null,
