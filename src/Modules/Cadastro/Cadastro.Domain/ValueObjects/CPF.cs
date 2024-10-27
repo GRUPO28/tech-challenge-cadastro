@@ -3,9 +3,9 @@ using Common.Exceptions;
 
 namespace Cadastro.Domain.ValueObjects;
 
-public class CPF : ValueObject
+public class Cpf : ValueObject
 {
-    public CPF(string numero)
+    public Cpf(string numero)
     {
         Numero = numero.Trim().Replace(".", "").Replace("-", "");
         Validate();

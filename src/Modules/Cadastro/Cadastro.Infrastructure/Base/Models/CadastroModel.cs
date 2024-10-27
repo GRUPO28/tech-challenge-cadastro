@@ -1,4 +1,6 @@
-﻿namespace Cadastro.Infrastructure.Base.Models;
+﻿using Common.Exceptions;
+
+namespace Cadastro.Infrastructure.Base.Models;
 
 public class CadastroModel : BaseModel
 {
@@ -6,15 +8,15 @@ public class CadastroModel : BaseModel
     {
     }
 
-    public string Email { get; set; }
-    public string CPF { get; set; }
-    public string Nome { get; set; }
+    public string Email { get; set; } = string.Empty;
+    public string CPF { get; set; } = string.Empty;
+    public string Nome { get; set; } = string.Empty;
     public DateTime DataDeCriacao { get; set; }
 
 
     internal static CadastroModel MapFromDomain(Domain.Entities.Cadastro cadastro)
     {
-        if (cadastro is null) return null;
+        if (cadastro is null) return null!;
 
         return new CadastroModel(cadastro.Id)
         {
@@ -27,12 +29,12 @@ public class CadastroModel : BaseModel
 
     internal static Domain.Entities.Cadastro MapToDomain(CadastroModel cadastroModel)
     {
-        if (cadastroModel is null) return null;
+        if (cadastroModel is null) return null!;
 
         return new Domain.Entities.Cadastro(cadastroModel.Id,
                                             cadastroModel.DataDeCriacao,
                                             new Domain.ValueObjects.Email(cadastroModel.Email),
-                                            new Domain.ValueObjects.CPF(cadastroModel.CPF),
+                                            new Domain.ValueObjects.Cpf(cadastroModel.CPF),
                                             cadastroModel.Nome);
     }
 
@@ -48,7 +50,10 @@ public class CadastroModel : BaseModel
             {
                 mapList.Add(MapToDomain(model));
             }
-            catch { }
+            catch(DomainNotificationException ex)
+            {
+                throw new DomainNotificationException($"Erro inesperado. {ex}");
+            }
         }
 
         return mapList;

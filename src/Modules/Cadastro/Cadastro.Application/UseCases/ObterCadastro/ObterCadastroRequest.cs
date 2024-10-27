@@ -2,5 +2,5 @@
 
 public class ObterCadastroRequest
 {
-    public string CPF {  get; set; }
+    public string CPF { get; set; } = string.Empty;
 }

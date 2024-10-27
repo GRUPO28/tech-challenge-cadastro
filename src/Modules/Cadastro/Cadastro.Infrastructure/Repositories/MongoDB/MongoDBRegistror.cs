@@ -2,7 +2,7 @@
 
 namespace Cadastro.Infrastructure.Repositories.MongoDB;
 
-public class MongoDBRegistror
+public static class MongoDBRegistror
 {
     public static void RegisterDocumentResolver()
     {
@@ -11,6 +11,6 @@ public class MongoDBRegistror
             new CamelCaseElementNameConvention(),
         };
 
-        ConventionRegistry.Register("Camel Case", pack, t => t.FullName.Contains(".MongoDB.Models"));
+        ConventionRegistry.Register("Camel Case", pack, t => t.FullName!.Contains(".MongoDB.Models"));
     }
 }

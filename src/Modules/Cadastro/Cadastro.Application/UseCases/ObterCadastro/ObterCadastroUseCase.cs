@@ -18,7 +18,7 @@ public class ObterCadastroUseCase : IUseCase<ObterCadastroRequest, ObterCadastro
 
         if(cadastro is null)
         {
-            return null;
+            return null!;
         }
 
         var response = cadastro.Adapt<ObterCadastroResponse>();

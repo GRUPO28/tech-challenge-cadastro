@@ -6,7 +6,7 @@ namespace Cadastro.Domain.Entities;
 
 public class Cadastro : Entity, IAggregationRoot
 {
-    public Cadastro(string id, DateTime dataDeCriacao, Email email, CPF cpf, string nome): base(id, dataDeCriacao)
+    public Cadastro(string id, DateTime dataDeCriacao, Email email, Cpf cpf, string nome): base(id, dataDeCriacao)
     {
         Email = email;
         CPF = cpf;
@@ -16,7 +16,7 @@ public class Cadastro : Entity, IAggregationRoot
     }
 
     public Email Email { get; set; }
-    public CPF CPF { get; set; }
+    public Cpf CPF { get; set; }
     public string Nome { get; set; }
 
     protected override void Validate()

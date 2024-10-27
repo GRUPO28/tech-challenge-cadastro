@@ -1,4 +1,5 @@
 ﻿using Cadastro.Infrastructure.Base.Models;
+using Common.Exceptions;
 using MongoDB.Driver;
 using System.Configuration;
 
@@ -23,7 +24,7 @@ public class CadastroDbContext
         }
         catch
         {
-            throw new Exception("Conexão Inválida");
+            throw new InfrastructureNotificationException("Conexão Inválida");
         }
 
         var mongoSettings = MongoClientSettings.FromUrl(url);
