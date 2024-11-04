@@ -99,7 +99,7 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
             {
                 this.ScenarioStart();
 #line 5
-  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
   testRunner.When("alocado Email errado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -130,7 +130,7 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
             {
                 this.ScenarioStart();
 #line 10
-  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 11
   testRunner.When("alocado CPF errado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -161,7 +161,7 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
             {
                 this.ScenarioStart();
 #line 15
-  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 16
   testRunner.When("alocado Nome errado", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -192,7 +192,7 @@ namespace Cadastro.Test.Unit.Features.Domain.Entities
             {
                 this.ScenarioStart();
 #line 20
-  testRunner.Given("Tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+  testRunner.Given("tentativa de criar objeto da entidade", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 21
   testRunner.When("alocado dados corretamente", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
