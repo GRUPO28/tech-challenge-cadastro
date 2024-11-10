@@ -18,5 +18,5 @@ jobs:
 
       - name: Build and Push Docker Image
         run: |
-          docker build -t grupo28/tc-cadastro:latest .
+          docker build -t grupo28/tc-cadastro:latest -f Dockerfile .
           docker push grupo28/tc-cadastro:latest
