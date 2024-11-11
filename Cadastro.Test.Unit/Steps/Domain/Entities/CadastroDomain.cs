@@ -38,32 +38,6 @@ public class CadastroDomain
     private Action? act;
 
 
-    [Given(@"tentativa de criar objeto da entidade")]
-    public void GivenTentativaDeCriarObjetoDaEntidade()
-    {
-        _entidade = CriarCadastro();
-    }
-
-    [When(@"alocado Email errado")]
-    public void WhenAlocadoEmailErrado()
-    {
-        act = () => new Cadastro.Domain.Entities.Cadastro(
-            null!,
-            DateTime.UtcNow,
-            new Cadastro.Domain.ValueObjects.Email("felipe"),
-            _entidade!.CPF,
-            _entidade.Nome
-            );
-    }
-
-   
-    [Then(@"dado criado com sucesso")]
-    public void ThenDadoCriadoComSucesso()
-    {
-        Assert.NotNull(act);
-    }
-
-
 
 
 
