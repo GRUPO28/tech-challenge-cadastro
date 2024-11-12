@@ -24,6 +24,21 @@ namespace Cadastro.Test.Unit.Steps.UseCases
             _cadastroRepositoryMock = new Mock<ICadastroRepository>();
             _useCase = new ObterCadastroUseCase(_cadastroRepositoryMock.Object);
         }
+
+        private Cadastro.Domain.Entities.Cadastro CriarCadastro()
+        {
+            string id = Guid.NewGuid().ToString();
+            string nome = "Felipe";
+            string email = "felipe@gmail.com";
+            string cpf = "17993850002";
+
+            return new Cadastro.Domain.Entities.Cadastro(
+                id,
+                DateTime.UtcNow,
+                new Email(email),
+                new Cpf(cpf),
+                nome);
+        }
         
     }
 }
