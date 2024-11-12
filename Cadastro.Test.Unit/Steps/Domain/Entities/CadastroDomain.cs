@@ -33,12 +33,4 @@ public class CadastroDomain
             new Cadastro.Domain.ValueObjects.Cpf(cpf),
         nome);
     }
-
-    private Cadastro.Domain.Entities.Cadastro? _entidade;
-    private Action? act;
-
-
-
-
-
 }
