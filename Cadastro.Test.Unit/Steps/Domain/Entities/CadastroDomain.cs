@@ -38,7 +38,7 @@ public class CadastroDomain
     private Action? act;
 
 
-    [Given(@"Tentativa de criar objeto da entidade")]
+    [Given(@"tentativa de criar objeto da entidade")]
     public void GivenTentativaDeCriarObjetoDaEntidade()
     {
         _entidade = CriarCadastro();
