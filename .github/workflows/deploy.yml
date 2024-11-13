@@ -1,14 +1,9 @@
 name: Deploy
+
 on:
-  workflow_run:
-    workflows: ["Build"]
-    types: [completed]
+  pull_request:
     branches:
       - main
-
-defaults:
-  run:
-    working-directory: ./k8s
 
 jobs:
   deploy:
@@ -40,6 +35,7 @@ jobs:
 
       - name: Substitute secrets in apptc-secret
         run: |
+          cd k8s/
           sed -i "s|\${MONGO_DB_CONNECTION_STRING}|${MONGO_DB_CONNECTION_STRING}|g" apptc-secret.yaml
         env:
           MONGO_DB_CONNECTION_STRING: ${{ secrets.MONGO_DB_CONNECTION_STRING }}
