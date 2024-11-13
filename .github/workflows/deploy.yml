@@ -1,18 +1,15 @@
 name: Deploy
+
 on:
   workflow_run:
     workflows: ["Build"]
-    types: [completed]
-    branches:
-      - main
-
-defaults:
-  run:
-    working-directory: ./k8s
+    types:
+      - completed
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -40,6 +37,7 @@ jobs:
 
       - name: Substitute secrets in apptc-secret
         run: |
+          cd k8s/
           sed -i "s|\${MONGO_DB_CONNECTION_STRING}|${MONGO_DB_CONNECTION_STRING}|g" apptc-secret.yaml
         env:
           MONGO_DB_CONNECTION_STRING: ${{ secrets.MONGO_DB_CONNECTION_STRING }}
@@ -48,4 +46,3 @@ jobs:
         run: |
           chmod +x apptc-apply.sh
           bash apptc-apply.sh
-          
