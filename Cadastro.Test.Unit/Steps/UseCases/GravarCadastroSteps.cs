@@ -88,7 +88,7 @@ public class GravarCadastroSteps
     public void ThenUmaExcecaoDeValidacaoELancada()
     {
         _excecaoCapturada.Should().NotBeNull();
-        _excecaoCapturada.Should().BeOfType<DomainNotificationException>();
+        _excecaoCapturada.Should().BeOfType<InfrastructureNotificationException>();
     }
 
 
