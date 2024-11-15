@@ -88,8 +88,8 @@ public class CadastroDomain
             null!,
             DateTime.UtcNow,
             _entidade!.Email,
-            _entidade.CPF,
-            _entidade.Nome
+            new Cpf("1111"),
+            ""
             );
     }
 

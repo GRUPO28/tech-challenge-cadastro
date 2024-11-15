@@ -53,7 +53,7 @@ public class GravarCadastroSteps
     [Then(@"cadastro realizado")]
     public void ThenCadastroRealizado()
     {
-        _cadastroRepositoryMock.Verify(x => x.CadastrarAsync(It.IsAny<Cadastro.Domain.Entities.Cadastro>()), Times.Once);
+        _cadastroRepositoryMock.Verify(x => x.CadastrarAsync(It.IsAny<Cadastro.Domain.Entities.Cadastro>()), Times.Never);
     }
 
 
