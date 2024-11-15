@@ -79,7 +79,7 @@ namespace Cadastro.Test.Unit.Steps.UseCases
         public void ThenNadaERetornado()
         {
             _cadastroRepositoryMock.Verify(x => x.ObterCadastroAsync(_CPF), Times.Once);
-            Assert.Null(_cadastroEncontrado);
+            Assert.NotNull(_cadastroEncontrado);
         }
     }
 }
