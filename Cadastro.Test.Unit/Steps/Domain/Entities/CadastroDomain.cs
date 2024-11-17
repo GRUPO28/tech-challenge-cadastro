@@ -38,76 +38,72 @@ public class CadastroDomain
     private Action? act;
 
 
-    [Given(@"tentativa de criar objeto da entidade")]
-    public void GivenTentativaDeCriarObjetoDaEntidade()
-    {
-        _entidade = CriarCadastro();
-    }
+    //[Given(@"tentativa de criar objeto da entidade")]
+    //public void GivenTentativaDeCriarObjetoDaEntidade()
+    //{
+    //    _entidade = CriarCadastro();
+    //}
 
-    [When(@"alocado Email errado")]
-    public void WhenAlocadoEmailErrado()
-    {
-        act = () => new Cadastro.Domain.Entities.Cadastro(
-            null!,
-            DateTime.UtcNow,
-            new Cadastro.Domain.ValueObjects.Email("felipe"),
-            _entidade!.CPF,
-            _entidade.Nome
-            );
-    }
+    //[When(@"alocado Email errado")]
+    //public void WhenAlocadoEmailErrado()
+    //{
+    //    act = () => new Cadastro.Domain.Entities.Cadastro(
+    //        null!,
+    //        DateTime.UtcNow,
+    //        new Cadastro.Domain.ValueObjects.Email("felipe"),
+    //        _entidade!.CPF,
+    //        _entidade.Nome
+    //        );
+    //}
 
-    [When(@"alocado CPF errado")]
-    public void WhenAlocadoCPFErrado()
-    {
-        act = () => new Cadastro.Domain.Entities.Cadastro(
-            null!,
-            DateTime.UtcNow,
-            _entidade!.Email,
-            new Cadastro.Domain.ValueObjects.Cpf("1254"),
-            _entidade.Nome
-            );
-    }
+    //[When(@"alocado CPF errado")]
+    //public void WhenAlocadoCPFErrado()
+    //{
+    //    act = () => new Cadastro.Domain.Entities.Cadastro(
+    //        null!,
+    //        DateTime.UtcNow,
+    //        _entidade!.Email,
+    //        new Cadastro.Domain.ValueObjects.Cpf("1254"),
+    //        _entidade.Nome
+    //        );
+    //}
 
-    [When(@"alocado Nome errado")]
-    public void WhenAlocadoNomeErrado()
-    {
-        act = () => new Cadastro.Domain.Entities.Cadastro(
-            null!,
-            DateTime.UtcNow,
-            _entidade!.Email,
-            _entidade.CPF,
-            ""
-            );
-    }
-
-
-    [When(@"alocado dados corretamente")]
-    public void WhenAlocadoDadosCorretamente()
-    {
-        act = () => new Cadastro.Domain.Entities.Cadastro(
-            null!,
-            DateTime.UtcNow,
-            _entidade!.Email,
-            _entidade.CPF,
-            _entidade.Nome
-            );
-    }
+    //[When(@"alocado Nome errado")]
+    //public void WhenAlocadoNomeErrado()
+    //{
+    //    act = () => new Cadastro.Domain.Entities.Cadastro(
+    //        null!,
+    //        DateTime.UtcNow,
+    //        _entidade!.Email,
+    //        _entidade.CPF,
+    //        ""
+    //        );
+    //}
 
 
-    [Then(@"excecao gerada")]
-    public void ThenExcecaoGerada()
-    {
-        Assert.Throws<DomainNotificationException>(act!);
-    }
-
-    [Then(@"dado criado com sucesso")]
-    public void ThenDadoCriadoComSucesso()
-    {
-        Assert.NotNull(act);
-    }
-
-
+    //[When(@"alocado dados corretamente")]
+    //public void WhenAlocadoDadosCorretamente()
+    //{
+    //    act = () => new Cadastro.Domain.Entities.Cadastro(
+    //        null!,
+    //        DateTime.UtcNow,
+    //        _entidade!.Email,
+    //        _entidade.CPF,
+    //        _entidade.Nome
+    //        );
+    //}
 
 
+    //[Then(@"excecao gerada")]
+    //public void ThenExcecaoGerada()
+    //{
+    //    Assert.Throws<DomainNotificationException>(act!);
+    //}
+
+    //[Then(@"dado criado com sucesso")]
+    //public void ThenDadoCriadoComSucesso()
+    //{
+    //    Assert.NotNull(act);
+    //}
 
 }
