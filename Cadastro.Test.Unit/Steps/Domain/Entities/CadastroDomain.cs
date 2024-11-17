@@ -50,7 +50,7 @@ public class CadastroDomain
         act = () => new Cadastro.Domain.Entities.Cadastro(
             null!,
             DateTime.UtcNow,
-            _entidade.Email,
+            new Cadastro.Domain.ValueObjects.Email("felipe"),
             _entidade!.CPF,
             _entidade.Nome
             );
@@ -63,7 +63,7 @@ public class CadastroDomain
             null!,
             DateTime.UtcNow,
             _entidade!.Email,
-            _entidade.CPF,
+            new Cadastro.Domain.ValueObjects.Cpf("1254"),
             _entidade.Nome
             );
     }
@@ -76,7 +76,7 @@ public class CadastroDomain
             DateTime.UtcNow,
             _entidade!.Email,
             _entidade.CPF,
-            _entidade.Nome
+            ""
             );
     }
 
@@ -88,8 +88,8 @@ public class CadastroDomain
             null!,
             DateTime.UtcNow,
             _entidade!.Email,
-            new Cpf("1111"),
-            ""
+            _entidade.CPF,
+            _entidade.Nome
             );
     }
 

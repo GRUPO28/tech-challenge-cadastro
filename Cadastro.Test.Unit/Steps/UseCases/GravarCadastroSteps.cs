@@ -53,7 +53,7 @@ public class GravarCadastroSteps
     [Then(@"cadastro realizado")]
     public void ThenCadastroRealizado()
     {
-        _cadastroRepositoryMock.Verify(x => x.CadastrarAsync(It.IsAny<Cadastro.Domain.Entities.Cadastro>()), Times.Never);
+        _cadastroRepositoryMock.Verify(x => x.CadastrarAsync(It.IsAny<Cadastro.Domain.Entities.Cadastro>()), Times.Once);
     }
 
 
@@ -88,7 +88,7 @@ public class GravarCadastroSteps
     public void ThenUmaExcecaoDeValidacaoELancada()
     {
         _excecaoCapturada.Should().NotBeNull();
-        _excecaoCapturada.Should().BeOfType<InfrastructureNotificationException>();
+        _excecaoCapturada.Should().BeOfType<DomainNotificationException>();
     }
 
 
