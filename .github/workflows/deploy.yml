@@ -44,5 +44,5 @@ jobs:
 
       - name: Deploy to EKS cluster
         run: |
-          chmod +x apptc-apply.sh
-          bash apptc-apply.sh
+          chmod +x k8s/apptc-apply.sh
+          bash k8s/apptc-apply.sh
