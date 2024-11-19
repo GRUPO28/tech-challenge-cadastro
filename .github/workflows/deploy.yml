@@ -42,7 +42,11 @@ jobs:
         env:
           MONGO_DB_CONNECTION_STRING: ${{ secrets.MONGO_DB_CONNECTION_STRING }}
 
+      - name: List files in the current directory (Debug Step)
+        run: ls -R
+
       - name: Deploy to EKS cluster
         run: |
-          chmod +x k8s/apptc-apply.sh
-          bash k8s/apptc-apply.sh
+          cd k8s/
+          chmod +x apptc-apply.sh
+          bash apptc-apply.sh
