@@ -36,17 +36,14 @@ jobs:
         run: aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name ${{ secrets.EKS_CLUSTER_NAME }}
 
       - name: Substitute secrets in apptc-secret
+        working-directory: k8s
         run: |
-          cd k8s/
           sed -i "s|\${MONGO_DB_CONNECTION_STRING}|${MONGO_DB_CONNECTION_STRING}|g" apptc-secret.yaml
         env:
           MONGO_DB_CONNECTION_STRING: ${{ secrets.MONGO_DB_CONNECTION_STRING }}
 
-      - name: List files in the current directory (Debug Step)
-        run: ls -R
-
       - name: Deploy to EKS cluster
+        working-directory: k8s
         run: |
-          cd k8s/
           chmod +x apptc-apply.sh
           bash apptc-apply.sh
