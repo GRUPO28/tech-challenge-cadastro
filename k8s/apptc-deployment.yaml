@@ -20,8 +20,8 @@ spec:
         ports:
         - containerPort: 5188
         envFrom:
-        - secretRef:
-            name: tc-cadastro-secret
+        - configMapRef:
+            name: tc-cadastro-configmap
         resources:
           requests:
             cpu: "100m" # 100m equivalent to 0.1 CPU
