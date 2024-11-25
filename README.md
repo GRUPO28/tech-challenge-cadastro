@@ -28,15 +28,17 @@ Desenvolvido microsserviços para solucionar o problema de forma escalável, uti
 
 ## 2.4 Banco de Dados
 
-Para acessar a documentação referente ao banco de dados MongoDB, vá para o repositório [TechChalange_InfraDbds](https://github.com/GRUPO28/TechChalange_InfraDb)
+Para acessar a documentação referente ao banco de dados, vá para o repositório [TechChalange_InfraDbds](https://github.com/GRUPO28/TechChalange_InfraDb)
 
 # 3. Utilização
 
 **Links Úteis**
+
+- [Getting Started](https://7soat-g28.apidocumentation.com/guide/getting-started)
 - [API Reference](https://7soat-g28.apidocumentation.com/reference)
 - [Postman](https://www.postman.com/altimetry-astronomer-96690638/workspace/tech-challenge-7soat)
 
-## 3.1 Rodar o projeto via  Docker
+## 3.1 Rodar o projeto via Docker
 
 1. Faça o fork ou clone do projeto
 
@@ -46,8 +48,22 @@ Para acessar a documentação referente ao banco de dados MongoDB, vá para o re
     ```sh
     docker compose up
     ```
+4. Acesse a documentação das APIs via Swagger: http://localhost:5187/swagger
 
-## 3.2 Rodar o projeto via Kubernetes
+## 3.2 Ordem para utilização das APIs
+
+1. Cadastre um usuário
+    - [Exemplo](https://www.postman.com/altimetry-astronomer-96690638/workspace/tech-challenge-7soat/request/34581742-a7f6b507-031d-403d-8e0f-4567707c3ffb?action=share&source=copy-link&creator=35038815&ctx=documentation)
+2. Adicione um ou mais produtos desejados
+    - [Exemplo](https://www.postman.com/altimetry-astronomer-96690638/workspace/tech-challenge-7soat/request/34581742-3492eb73-ae67-40ce-ad57-8ddabcf41281?action=share&source=copy-link&creator=35038815&ctx=documentation)
+3. Criar um pedido
+    - [Exemplo](https://www.postman.com/altimetry-astronomer-96690638/workspace/tech-challenge-7soat/request/34581742-d5bca302-9ce8-49b6-beac-5e35805b4f6b?action=share&source=copy-link&creator=35038815&ctx=documentation)
+4. Fazer o checkout do pedido
+    - [Exemplo](https://www.postman.com/altimetry-astronomer-96690638/workspace/tech-challenge-7soat/request/34581742-21c832f5-c6f2-4647-b04c-82f39e2c2007?action=share&source=copy-link&creator=35038815&ctx=documentation)
+
+> Uma vez que o processo de checkout completo depende do projeto estar rodando na internet com ao menos o webhook para callback do Mercado Pago, através da [API de Update](https://www.postman.com/altimetry-astronomer-96690638/workspace/tech-challenge-7soat/request/34581742-f3e3fd97-0e61-4870-aa0d-476028c40db6?action=share&source=copy-link&creator=34581742&ctx=documentation) é possível manipular o status dos pedidos conforme o necessário, facilitando os testes.
+
+## 3.3 Rodar o projeto via Kubernetes
 
 Para iniciar o projeto utilizando o Kubernetes, basta seguir os comandos encontrados abaixo:
 - [Comandos](./k8s/comandos.md)
