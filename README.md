@@ -24,7 +24,7 @@ Desenvolvido microsserviços para solucionar o problema de forma escalável, uti
 
 ## 2.3 Arquitetura
 
-![Arquitetura](./assets/DesenhoArquiteturaFase2_v1.png)
+![Arquitetura](./assets/DesenhoArquiteturaFase4.png)
 
 ## 2.4 Banco de Dados
 
